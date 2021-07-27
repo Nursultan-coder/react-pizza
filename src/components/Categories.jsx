@@ -1,36 +1,5 @@
 import React from 'react';
 
-// class Categories extends React.Component {
-//   state = {
-//     activeItem: 0,
-//   };
-
-//   onSelectItem = index => {
-//     this.setState({
-//       activeItem: index
-//     });
-//   }
-
-//   render() {
-//     const { items, onClickItem } = this.props;
-//     return (
-//       <div className="categories">
-//         <ul>
-//           {
-//             items.map((item, index) => {
-//               return (
-//<li className={
-//  this.state.activeItem === index ? "active" : ""} 
-//onClick={() => {this.onSelectItem(index)}} 
-//                 key={`${item}_${index}`}>{item}</li>
-//               );
-//             })
-//           }
-//         </ul>
-//       </div>
-//     );
-//   }
-// }
 
 function Categories({ items, onClickItem }) {
   const [activeItem, setActiveItem] = React.useState(null);
@@ -64,3 +33,37 @@ function Categories({ items, onClickItem }) {
 }
 
 export default Categories;
+
+
+
+// class Categories extends React.Component {
+//   state = {
+//     activeItem: 0,
+//   };
+
+//   onSelectItem = index => {
+//     this.setState({
+//       activeItem: index
+//     });
+//   }
+
+//   render() {
+//     const { items, onClickItem } = this.props;
+//     return (
+//       <div className="categories">
+//         <ul>
+//           {
+//             items.map((item, index) => {
+//               return (
+//<li className={
+//  this.state.activeItem === index ? "active" : ""} 
+//onClick={() => {this.onSelectItem(index)}} 
+//                 key={`${item}_${index}`}>{item}</li>
+//               );
+//             })
+//           }
+//         </ul>
+//       </div>
+//     );
+//   }
+// }
