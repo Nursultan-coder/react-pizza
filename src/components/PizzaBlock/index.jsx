@@ -1,7 +1,8 @@
 import React from 'react'
 import classNames from 'classnames';
+import Button from './../Button';
 
-function PizzaBlock({ name, price, sizes, url, types, rating, category }) {
+function PizzaBlock({ id, name, price, sizes, imageUrl, types, onClickAddPizza, inCartCuont }) {
   const availbleTypes = ["тонкое", "традиционное"];
   const availbleSize = [26, 30, 40];
   const [activeType, setActiveType] = React.useState(types[0]);
@@ -15,11 +16,22 @@ function PizzaBlock({ name, price, sizes, url, types, rating, category }) {
     setActiveSize(size);
   }
 
+  const onAddPizza = () => {
+    const obj = {
+      id, 
+      name,
+      price,
+      size: activeSize,
+      type: availbleTypes[activeType]
+    };
+    onClickAddPizza(obj);
+  }
+
   return (
     <div className="pizza-block">
       <img
         className="pizza-block__image"
-        src={url} 
+        src={imageUrl} 
         alt="Pizza"
       />
       <h4 className="pizza-block__title">{name}</h4>
@@ -54,7 +66,7 @@ function PizzaBlock({ name, price, sizes, url, types, rating, category }) {
       </div>
       <div className="pizza-block__bottom">
         <div className="pizza-block__price">от {price} ₽</div>
-        <div className="button button--outline button--add">
+        <Button onClick={onAddPizza} className="button--add" outline>
           <svg
             width="12"
             height="12"
@@ -67,8 +79,9 @@ function PizzaBlock({ name, price, sizes, url, types, rating, category }) {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
-        </div>
+          {inCartCuont && <i>{inCartCuont}</i>}
+        </Button>
+        {/* поменять стили кнопки */}
       </div>
     </div>
   );
