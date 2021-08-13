@@ -30,3 +30,20 @@
     }
   }
 }
+@media (max-width: 1000px) {
+  .header {
+    padding: 5px 0;
+  
+    &__logo {
+      display: flex;
+  
+      h1 {
+        width: 100px;
+      }
+  
+      p {
+        display: none;
+      }
+    }
+  }
+}

@@ -21,6 +21,7 @@ function PizzaBlock({ id, name, price, sizes, imageUrl, types, onClickAddPizza, 
       id, 
       name,
       price,
+      url: imageUrl,
       size: activeSize,
       type: availbleTypes[activeType]
     };

@@ -129,6 +129,7 @@ function Cart() {
                 lengthCart={item.length}
                 key={item[0].id} 
                 id={item[0].id} 
+                url={item[0].url}
                 name={item[0].name} 
                 price={item[0].price} 
                 size={item[0].size} 

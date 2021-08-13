@@ -9,6 +9,7 @@ body {
   padding: 50px 0;
 }
 
+
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
@@ -318,3 +319,248 @@ body {
     }
   }
 }
+
+@media (max-width: 1000px) {
+  body {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  }
+  .wrapper {
+  width: calc(100vw - 50px);
+  }
+  .content {
+    padding: 0;
+  
+    &__title {
+      margin: 25px 0;
+    }
+    &__items {
+      justify-content: center;
+    }
+    &__top {
+      display: none;
+    }
+  }
+  .cart--empty {
+    width: 95%;
+    margin-top: 20px;
+}
+.cart__item {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 90%;
+  border-top: 1px solid #f6f6f6;
+  padding-top: 10px;
+  margin-top: 10px;
+  position: relative;
+}
+.cart .content__title {
+  display: flex;
+  align-items: center;
+  font-size: 32px;
+}
+
+
+
+
+
+.cart {
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .content__title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+
+    svg {
+      position: relative;
+      top: -2px;
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+      path {
+        stroke: $black;
+        stroke-width: 1.9;
+      }
+    }
+  }
+
+  &__clear {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    @include noselect();
+
+    span {
+      display: inline-block;
+      margin-left: 7px;
+      color: #b6b6b6;
+      font-size: 18px;
+    }
+
+    span,
+    svg,
+    path {
+      transition: all $duration ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        path {
+          stroke: darken($color: #b6b6b6, $amount: 50);
+        }
+      }
+      span {
+        color: darken($color: #b6b6b6, $amount: 50);
+      }
+    }
+  }
+
+  &__item {
+
+    &-img {
+      display: flex;
+      align-items: center;
+      margin-right: 15px;
+      width: 10%;
+
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 40%;
+
+      h3 {
+        font-weight: bold;
+        font-size: 17px;
+        line-height: 22px;
+        letter-spacing: 0.01em;
+      }
+
+      p {
+        font-size: 13px;
+        color: #8d8d8d;
+      }
+    }
+
+    &-count {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 30%;
+
+      &-minus {
+        svg {
+          path:first-of-type {
+            display: none;
+          }
+        }
+      }
+
+      b {
+        font-size: 22px;
+      }
+    }
+
+    &-price {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 33%;
+      
+
+      b {
+        font-weight: bold;
+        font-size: 22px;
+        letter-spacing: 0.01em;
+      }
+    }
+
+    &-remove {
+      display: none;
+      align-items: center;
+      justify-content: flex-end;
+      width: 4%;
+
+
+      .button {
+        border-color: darken($color: $gray-line, $amount: 10);
+
+        &-outline {
+          background-color: #fff;
+          color: #FE5F1E;
+          border: 1px solid #FE5F1E;
+        }
+      }
+
+      svg {
+        transform: rotate(45deg);
+
+        path {
+          fill: darken($color: $gray-line, $amount: 15);
+        }
+      }
+
+      .button {
+        svg {
+          width: 11.5px;
+          height: 11.5px;
+          position: relative;
+        }
+        &:hover,
+        &:active {
+          border-color: darken($color: $gray-line, $amount: 80);
+          background-color: darken($color: $gray-line, $amount: 80);
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    margin: 50px 0;
+
+    &-details {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        font-size: 16px;
+
+        &:last-of-type {
+          b {
+            color: $orange;
+          }
+        }
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 40px;
+
+      .go-back-btn {
+        font-size: 14px;
+        width: 160px;
+
+      .pay-btn {
+        font-size: 14px;
+        width: 160px;
+        padding: 10px;
+      }
+    }
+  }
+
+  }}}
