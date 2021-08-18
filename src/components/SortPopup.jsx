@@ -46,7 +46,7 @@ const SortPopup = React.memo(function SortPopup({ activeSortBy, items, onClickSo
         <b>Сортировка по:</b>
         <span onClick={toggleVisiblePopup}>{activeLabel}</span>
       </div>
-      {!visiblePopup && <div className="sort__popup">
+      {visiblePopup && <div className="sort__popup">
         <ul>
         {items && 
           items.map((item, index) => {
