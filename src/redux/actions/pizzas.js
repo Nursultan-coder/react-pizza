@@ -5,7 +5,7 @@ export const setLoaded = val => ({
 
 export const fetchPizzas = (catigoryBy, sortBy) => dispatch => {
   dispatch(setLoaded(false));
-  fetch(`http://localhost:3000/pizzas?${catigoryBy !== null ? `category=${catigoryBy}` : ""}&_sort=${sortBy.type}&_order=${sortBy.order}`)
+  fetch(`/pizzas?${catigoryBy !== null ? `category=${catigoryBy}` : ""}&_sort=${sortBy.type}&_order=${sortBy.order}`)
     .then((resp) => resp.json())
     .then((json) => {
       dispatch(setPizzas(json));
