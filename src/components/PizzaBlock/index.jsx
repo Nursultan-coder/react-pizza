@@ -82,7 +82,6 @@ function PizzaBlock({ id, name, price, sizes, imageUrl, types, onClickAddPizza, 
           <span>Добавить</span>
           {inCartCuont && <i>{inCartCuont}</i>}
         </Button>
-        {/* поменять стили кнопки */}
       </div>
     </div>
   );

@@ -1,20 +1,20 @@
-import React from 'react'
+import React from 'react';
 
 const SortPopup = React.memo(function SortPopup({ activeSortBy, items, onClickSortType }) {
   const [visiblePopup, setVisiblePopup] = React.useState(false);
   const sortRef = React.useRef();
-  const activeLabel = items.find(obj => obj.type === activeSortBy).name;
-
+  let activeLabel = items.find(obj => obj.type === activeSortBy).name;
 
   const toggleVisiblePopup = () => {
-    console.log(visiblePopup);
     setVisiblePopup(!visiblePopup);
-    console.log(visiblePopup);
   };
+
 
   const handleOutsideClick = (e) => {
     const path = e.path || (e.composedPath && e.composedPath());
     if(path.includes(sortRef.current)) {
+      console.log('hello');
+    }else {
       setVisiblePopup(false);
     }
   }
@@ -53,7 +53,7 @@ const SortPopup = React.memo(function SortPopup({ activeSortBy, items, onClickSo
             return (
               <li 
               className={activeSortBy === item.type ? "active" : ""}
-              onClick={() => {onSelectItem(item.type)}} 
+              onClick={() => {onSelectItem(item)}} 
               key={`${item.type}_${index}`}>
                 {item.name}
               </li>
